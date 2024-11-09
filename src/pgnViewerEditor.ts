@@ -45,7 +45,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
   }
 
   private getHtmlForWebview(webview: vscode.Webview): string {
-    vscode.window.showInformationMessage(vscode.Uri.joinPath(this.context.extensionUri, 'dist.js').toString());
+    vscode.window.showInformationMessage(vscode.Uri.joinPath(this.context.extensionUri, './dist.js').toString());
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(this.context.extensionUri, 'dist.js')
     );
