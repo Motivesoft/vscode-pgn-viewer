@@ -11,6 +11,7 @@
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -50,7 +51,8 @@
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
   },
   "devDependencies": {
     "@types/mocha": "^10.0.9",
@@ -67,6 +69,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@mliebelt/pgn-viewer": "^1.6.10"
+    "@mliebelt/pgn-viewer": "^1.6.10",
+    "@vscode/test-web": "^0.0.63"
   }
 }
