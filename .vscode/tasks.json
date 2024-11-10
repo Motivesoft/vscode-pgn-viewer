@@ -6,6 +6,7 @@
 		{
             "label": "watch",
             "dependsOn": [
+                "npm: copy-files",
                 "npm: watch:tsc",
                 "npm: watch:esbuild"
             ],
