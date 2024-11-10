@@ -81,9 +81,6 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
             color: var(--vscode-editor-foreground);
             font-family: Arial,sans-serif;
           }
-          .pgnvjs .games {
-            background-color: #800000;
-          }
           .pgnvjs .moves.list > move-number {
             background-color: var(--vscode-editor-background);
             border-color: var(--vscode-editor-background);
