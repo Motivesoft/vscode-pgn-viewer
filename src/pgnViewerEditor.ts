@@ -65,37 +65,29 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
         <script src="${scriptUri}"></script>
         <title>Chess Board</title>
         <style>
-          body {
-            <!--background-color: #F4F4F4;-->
-            font-family: Arial, sans-serif;
-            padding: 10px;
-          }
-          pre {
-            padding: 10px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-          }
           .pgnvjs
           {
-            background-color: #800000;
+            background-color: var(--vscode-editor-background);
           }
           .pgnvjs .moves {
-            background-color: #000080;
+            background-color: var(--vscode-editor-background);
+            color: var(--vscode-editor-foreground);
           }
           .pgnvjs .buttons {
-            background-color: #008000;
+            background-color: var(--vscode-editor-background);
           }
           .pgnvjs .fen {
-            background-color: #800080;
+            background-color: var(--vscode-editor-background);
+            color: var(--vscode-editor-foreground);
+            font-family: Arial,sans-serif;
           }
           .pgnvjs .games {
-            background-color: #008080;
+            background-color: #800000;
           }
           .pgnvjs .moves.list > move-number {
-            background-color: #404040;
-            border-color: #404040;
-            color: #FFFFFF;
+            background-color: var(--vscode-editor-background);
+            border-color: var(--vscode-editor-background);
+            color: var(--vscode-editor-foreground);
           }
         </style>
       </head>
