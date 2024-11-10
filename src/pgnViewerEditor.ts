@@ -66,7 +66,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
         <title>Chess Board</title>
         <style>
           body {
-            background-color: #F4F4F4;
+            <!--background-color: #F4F4F4;-->
             font-family: Arial, sans-serif;
             padding: 10px;
           }
@@ -75,6 +75,27 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
             border-radius: 5px;
             white-space: pre-wrap;
             word-wrap: break-word;
+          }
+          .pgnvjs
+          {
+            background-color: #800000;
+          }
+          .pgnvjs .moves {
+            background-color: #000080;
+          }
+          .pgnvjs .buttons {
+            background-color: #008000;
+          }
+          .pgnvjs .fen {
+            background-color: #800080;
+          }
+          .pgnvjs .games {
+            background-color: #008080;
+          }
+          .pgnvjs .moves.list > move-number {
+            background-color: #404040;
+            border-color: #404040;
+            color: #FFFFFF;
           }
         </style>
       </head>
@@ -92,6 +113,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
                   layout: "left",
                   notation: "long",
                   notationLayout: "list",
+                  resizable: false,
                   showFen: true,
                   showResult: true,
                   width: "1000px",
