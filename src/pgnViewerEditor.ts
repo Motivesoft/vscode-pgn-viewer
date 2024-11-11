@@ -30,7 +30,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
         content: document.getText(),
       });
     };
-
+  
     const changeDocumentSubscription = vscode.workspace.onDidChangeTextDocument(e => {
       if (e.document.uri.toString() === document.uri.toString()) {
         updateWebview();
@@ -40,6 +40,17 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     webviewPanel.onDidDispose(() => {
       changeDocumentSubscription.dispose();
     });
+
+    webviewPanel.onDidChangeViewState( e => {
+        if (e.webviewPanel.visible) {
+          updateWebview();
+        }
+      },
+      null,
+      [ 
+        changeDocumentSubscription
+      ]
+    );
 
     updateWebview();
   }
@@ -99,7 +110,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
               case 'update':
                 PGNV.pgnView('board', { 
                   pgn: message.content,
-                  figurine: "merida",
+                  figurine: "alpha",
                   layout: "left",
                   notation: "long",
                   notationLayout: "list",

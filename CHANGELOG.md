@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.0.2]
+
+- Ensure the page redraws if the user changes tab
+
 ## [1.0.1]
 
 - Documentation tweaks
@@ -14,5 +18,6 @@
 - The PGN viewer uses background and foreground colors from the current editor theme
 - More layout and configuration options will be provided in a subsequent update
 
+[1.0.2]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.2
 [1.0.1]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.0
