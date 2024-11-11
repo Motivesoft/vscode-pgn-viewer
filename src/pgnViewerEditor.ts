@@ -49,9 +49,8 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     // 1) npm i @mliebelt/pgn-viewer
     // 2) copy the dist.js from that package to our 'dist' folder using the "copy-files" script in package.json
     //    - the dist folder is already going be part of the resultant vsix when packaged
-    //    - the copy is automated to occur when installing, packaging and debugging 
-    // 3) reference the copied module using the code, below, which will now work correctly whatever the launch semantics
-    vscode.window.showInformationMessage(vscode.Uri.joinPath(this.context.extensionUri, 'dist', './dist.js').toString());
+    //    - the copy is automated to occur when installing, packaging and building for debugging 
+    // 3) reference the copied module using the code below, which will now work correctly whatever the launch semantics
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(this.context.extensionUri, 'dist', 'dist.js')
     );
