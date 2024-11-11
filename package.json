@@ -69,6 +69,33 @@
               "Piece style 'leipzig'"  
             ],
             "description": "Choose which set of pieces to use on the board"
+          },
+          "vscode-pgn-viewer.theme": {
+            "type": "string",
+            "default": "default",
+            "enum": [
+              "default",
+              "zeit",
+              "green",
+              "blue",
+              "falken",
+              "beyer",
+              "sportverlag",
+              "informator",
+              "brown"
+            ],
+            "enumDescriptions": [
+              "Theme 'default'",
+              "Theme 'zeit'",
+              "Theme 'green'",
+              "Theme 'blue'",
+              "Theme 'falken'",
+              "Theme 'beyer'",
+              "Theme 'sportverlag'",
+              "Theme 'informator'",
+              "Theme 'brown'"
+            ],
+            "description": "Choose which theme to use for the board"
           }
         }
       }
