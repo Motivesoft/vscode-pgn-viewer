@@ -1,8 +1,8 @@
 {
   "name": "vscode-pgn-viewer",
-  "displayName": "PGN Viewer",
+  "displayName": "Chess PGN Viewer",
   "description": "Displays Portable Game Notation files on an interactive chess board",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.95.0"
   },

@@ -3,6 +3,7 @@
 This extension provides an interactive viewer for chess Portable Game Notation (pgn) files. The viewer shows the game details, moves and a board on which to play through the moves.
 
 The PGN viewer uses background and foreground colors from the current editor theme, for example, to display in dark or light:
+
 ![Showing two different themes](images/themes.png)
 
 ## Features
@@ -26,6 +27,10 @@ None, but some to be added in a subsequent release
 Results are unknown if the provided PGN data is invalid.
 
 ## Release Notes
+
+### 1.0.1
+
+- Documentation tweaks
 
 ### 1.0.0
 

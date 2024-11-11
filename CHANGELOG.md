@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.0.1]
+
+- Documentation tweaks
+
 ## [1.0.0]
 
 - Initial release
@@ -10,4 +14,5 @@
 - The PGN viewer uses background and foreground colors from the current editor theme
 - More layout and configuration options will be provided in a subsequent update
 
+[1.0.1]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.1
 [1.0.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.0
