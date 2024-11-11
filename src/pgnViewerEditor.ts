@@ -37,8 +37,16 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
       }
     });
 
+    const changeConfigurationSubscription = vscode.workspace.onDidChangeConfiguration(e => {
+      if (e.affectsConfiguration('vscode-pgn-viewer.pieceStyle')) {
+        webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
+        updateWebview();
+      }
+    });
+
     webviewPanel.onDidDispose(() => {
       changeDocumentSubscription.dispose();
+      changeConfigurationSubscription.dispose();
     });
 
     webviewPanel.onDidChangeViewState( e => {
@@ -48,7 +56,8 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
       },
       null,
       [ 
-        changeDocumentSubscription
+        changeDocumentSubscription, 
+        changeConfigurationSubscription
       ]
     );
 
@@ -65,6 +74,9 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     const scriptUri = webview.asWebviewUri(
       vscode.Uri.joinPath(this.context.extensionUri, 'dist', 'dist.js')
     );
+
+    const configuration = vscode.workspace.getConfiguration("vscode-pgn-viewer");
+    const pieceStyle = configuration.get("pieceStyle");
 
     // Return the HTML for the page, including the script calls to display the board and the style stuff
     // to coloriize the page based on whatever the current theme is
@@ -110,7 +122,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
               case 'update':
                 PGNV.pgnView('board', { 
                   pgn: message.content,
-                  figurine: "alpha",
+                  pieceStyle: "${pieceStyle}",
                   layout: "left",
                   notation: "long",
                   notationLayout: "list",

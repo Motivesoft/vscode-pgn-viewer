@@ -41,6 +41,38 @@
         "title": "Open In PGN Viewer"
       }
     ],
+    "configuration": [
+      {
+        "title": "Chess PGN Viewer",
+        "properties": {
+          "vscode-pgn-viewer.pieceStyle": {
+            "type": "string",
+            "default": "merida",
+            "enum": [
+              "merida",
+              "case",
+              "wikipedia",
+              "alpha",
+              "uscf",
+              "condal",
+              "maya",
+              "leipzig"  
+            ],
+            "enumDescriptions": [
+              "Piece style 'merida'",
+              "Piece style 'case'",
+              "Piece style 'wikipedia'",
+              "Piece style 'alpha'",
+              "Piece style 'uscf'",
+              "Piece style 'condal'",
+              "Piece style 'maya'",
+              "Piece style 'leipzig'"  
+            ],
+            "description": "Choose which set of pieces to use on the board"
+          }
+        }
+      }
+    ],
     "customEditors": [
       {
         "viewType": "vscode-pgn-viewer.readonlyView",
