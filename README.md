@@ -11,7 +11,7 @@ When the user opens a `.pgn` file, the extension will automatically open the fil
 
 Alternately, if the PGN text is already open in an editor window, choosing the `Open In PGN Viewer` command from the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) will open the file in this viewer.
 
-If a directory is open in the editor, right-click on a PGN file and select `Open With...` and choose `PGN Viewer` from the menu.
+If a directory is open in the editor, a `.pgn` file can be opened directly by selecting it, or right-click on the file, select `Open With...` and choose `PGN Viewer` from the menu.
 
 ## Requirements
 
