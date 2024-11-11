@@ -56,6 +56,8 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
       vscode.Uri.joinPath(this.context.extensionUri, 'dist', 'dist.js')
     );
 
+    // Return the HTML for the page, including the script calls to display the board and the style stuff
+    // to coloriize the page based on whatever the current theme is
     return `
       <!DOCTYPE html>
       <html lang="en">
@@ -109,7 +111,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
                   boardSize: "400px",
                   movesWidth: "400px",
                   orientation: "white"
-                   });
+                });
                 break;
             }
           });
