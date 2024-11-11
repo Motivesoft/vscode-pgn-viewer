@@ -10,7 +10,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     return providerRegistration;
   }
 
-  private static readonly viewType = 'vscode-pgn-viewer.readonlyView';
+  public static readonly viewType = 'vscode-pgn-viewer.readonlyView';
 
   constructor(private readonly context: vscode.ExtensionContext) {}
 
