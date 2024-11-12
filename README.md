@@ -37,7 +37,9 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 
 ## Known Issues
 
-Results are unknown if the provided PGN data is invalid.
+- Results are unknown if the provided PGN data is invalid.
+- The game position reverts to its initial state when configuration changes are made
+- The game position reverts to its initial state if the editor tab is hidden and then made visible again
 
 ## Release Notes
 
