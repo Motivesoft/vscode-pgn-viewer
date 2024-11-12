@@ -37,11 +37,21 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
       }
     });
 
+    // Watch for any configuration changes and react immediately
     const changeConfigurationSubscription = vscode.workspace.onDidChangeConfiguration(e => {
-      if (e.affectsConfiguration('vscode-pgn-viewer.pieceStyle') ||
-          e.affectsConfiguration('vscode-pgn-viewer.theme') ||
-          e.affectsConfiguration('vscode-pgn-viewer.showCoordinates') ||
-          e.affectsConfiguration('vscode-pgn-viewer.showFen')) {
+      if (
+        e.affectsConfiguration('vscode-pgn-viewer.pieceStyle') ||
+        e.affectsConfiguration('vscode-pgn-viewer.theme') ||
+        e.affectsConfiguration('vscode-pgn-viewer.layout') ||
+        e.affectsConfiguration('vscode-pgn-viewer.notationLayout') ||
+        e.affectsConfiguration('vscode-pgn-viewer.moveNotation') ||
+        e.affectsConfiguration('vscode-pgn-viewer.showCoordinates') ||
+        e.affectsConfiguration('vscode-pgn-viewer.showFen') ||
+        e.affectsConfiguration('vscode-pgn-viewer.showHeaders') ||
+        e.affectsConfiguration('vscode-pgn-viewer.showResult') ||
+        e.affectsConfiguration('vscode-pgn-viewer.boardSize') ||
+        e.affectsConfiguration('vscode-pgn-viewer.movesWidth')
+      ) {
         webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
         updateWebview();
       }
@@ -81,8 +91,27 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     const configuration = vscode.workspace.getConfiguration("vscode-pgn-viewer");
     const pieceStyle = configuration.get("pieceStyle");
     const theme = configuration.get("theme");
+    const layout = configuration.get("layout");
+    const notationLayout = configuration.get("notationLayout");
+    const moveNotation = configuration.get("moveNotation");
     const showCoordinates = configuration.get("showCoordinates");
     const showFen = configuration.get("showFen");
+    const showHeaders = configuration.get("showHeaders");
+    const showResult = configuration.get("showResult");
+    const boardSize = configuration.get("boardSize") as number;
+    const movesWidth = configuration.get("movesWidth") as number;
+
+    // if orientation is left/right, overall width is the sum of board and move size
+    // otherwise its the max of them
+    let width = 0;
+    if (layout === "left" || layout === "right") {
+      width = boardSize + movesWidth;
+    } else {
+      width = Math.max( boardSize + movesWidth );
+    }
+
+    // Add a bit for good measure (borders, scrollbars, other decorations)
+    width += 100;
 
     // Return the HTML for the page, including the script calls to display the board and the style stuff
     // to coloriize the page based on whatever the current theme is
@@ -95,12 +124,6 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
         <script src="${scriptUri}"></script>
         <title>Chess Board</title>
         <style>
-          .pgnvjs .cg-wrap.orientation-white coords.ranks coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-white coords.files coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-black coords.ranks coord:nth-child(2n + 1), .pgnvjs .cg-wrap.orientation-black coords.files coord:nth-child(2n + 1) {
-            color: red;
-          }
-          .pgnvjs .cg-wrap.orientation-black coords.ranks coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-black coords.files coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-white coords.ranks coord:nth-child(2n + 1), .pgnvjs .cg-wrap.orientation-white coords.files coord:nth-child(2n + 1) {
-            color: blue;
-          }
           .pgnvjs
           {
             background-color: var(--vscode-editor-background);
@@ -138,17 +161,18 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
                   pgn: message.content,
                   pieceStyle: "${pieceStyle}",
                   theme: "${theme}",
-                  layout: "left",
-                  notation: "long",
-                  notationLayout: "list",
+                  layout: "${layout}",
+                  notation: "${moveNotation}",
+                  notationLayout: "${notationLayout}",
                   resizable: false,
                   showCoords: ${showCoordinates},
-                  coordsInner: false,
+                  coordsInner: true,
                   showFen: ${showFen},
-                  showResult: true,
-                  width: "1000px",
-                  boardSize: "400px",
-                  movesWidth: "400px",
+                  showResult: ${showResult},
+                  headers: ${showHeaders},
+                  boardSize: "${boardSize}px",
+                  movesWidth: "${movesWidth}px",
+                  width: "${width}px",
                   orientation: "white"
                 });
                 break;

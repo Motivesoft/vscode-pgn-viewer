@@ -45,6 +45,11 @@
       {
         "title": "Chess PGN Viewer",
         "properties": {
+          "vscode-pgn-viewer.showResult": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show the game result, if available."
+          },
           "vscode-pgn-viewer.showCoordinates": {
             "type": "boolean",
             "default": false,
@@ -55,6 +60,102 @@
             "default": false,
             "description": "Whether to show the FEN for the current position."
           },
+          "vscode-pgn-viewer.showHeaders": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to show headers (e.g. player names)."
+          },
+          "vscode-pgn-viewer.boardSize": {
+            "type": "number",
+            "default": 400,
+            "enum": [
+              200,
+              400,
+              600,
+              800,
+              1000,
+              1200,
+              1400,
+              1600  
+            ],
+            "enumDescriptions": [
+              "Board size '200px'",
+              "Board size '400px'",
+              "Board size '600px'",
+              "Board size '800px'",
+              "Board size '1000px'",
+              "Board size '1200px'",
+              "Board size '1400px'",
+              "Board size '1600px'"  
+            ],
+            "description": "Choose the size of the board"
+          },
+          "vscode-pgn-viewer.movesWidth": {
+            "type": "number",
+            "default": 400,
+            "enum": [
+              200,
+              400,
+              600,
+              800,
+              1000,
+              1200,
+              1400,
+              1600  
+            ],
+            "enumDescriptions": [
+              "Moves width '200px'",
+              "Moves width '400px'",
+              "Moves width '600px'",
+              "Moves width '800px'",
+              "Moves width '1000px'",
+              "Moves width '1200px'",
+              "Moves width '1400px'",
+              "Moves width '1600px'"  
+            ],
+            "description": "Choose the width of the moves display"
+          },
+          "vscode-pgn-viewer.notationLayout": {
+            "type": "string",
+            "default": "list",
+            "enum": [
+              "list",
+              "inline"
+            ],
+            "enumDescriptions": [
+              "Show notation in a list",
+              "Show notation as an inline block"  
+            ],
+            "description": "Choose notation layout"
+          },      
+          "vscode-pgn-viewer.moveNotation": {
+            "type": "string",
+            "default": "list",
+            "enum": [
+              "short",
+              "long"
+            ],
+            "enumDescriptions": [
+              "Use short move notation, e.g. 'e4'",
+              "Use long move notation, e.g. 'e2-e4'"  
+            ],
+            "description": "Choose the move notation"
+          },      
+          "vscode-pgn-viewer.layout": {
+            "type": "string",
+            "default": "left",
+            "enum": [
+              "left",
+              "right",
+              "top",
+              "bottom"
+            ],
+            "enumDescriptions": [
+              "Use short move notation, e.g. 'e4'",
+              "Use long move notation, e.g. 'e2-e4'"  
+            ],
+            "description": "Choose the position of the board relative to the moves list"
+          },      
           "vscode-pgn-viewer.pieceStyle": {
             "type": "string",
             "default": "merida",
