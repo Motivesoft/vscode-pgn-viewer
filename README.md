@@ -40,6 +40,10 @@ Results are unknown if the provided PGN data is invalid.
 
 ## Release Notes
 
+### 1.1.0
+
+- Allow configuration of the board and moves list etc. See [Extension Settings](#extension-settings)
+
 ### 1.0.2
 
 - Ensure the page redraws if the user changes tab
