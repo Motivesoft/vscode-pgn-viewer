@@ -69,51 +69,71 @@
             "type": "number",
             "default": 400,
             "enum": [
+              100,
               200,
+              300,
               400,
+              500,
               600,
+              700,
               800,
+              900,
               1000,
+              1100,
               1200,
+              1300,
               1400,
+              1500,
               1600  
             ],
             "enumDescriptions": [
+              "Board size '100px'",
               "Board size '200px'",
+              "Board size '300px'",
               "Board size '400px'",
+              "Board size '500px'",
               "Board size '600px'",
+              "Board size '700px'",
               "Board size '800px'",
+              "Board size '900px'",
               "Board size '1000px'",
+              "Board size '1100px'",
               "Board size '1200px'",
+              "Board size '1300px'",
               "Board size '1400px'",
-              "Board size '1600px'"  
+              "Board size '1500px'",
+              "Board size '1600 px'" 
             ],
             "description": "Choose the size of the board"
           },
           "vscode-pgn-viewer.movesWidth": {
             "type": "number",
-            "default": 400,
+            "default": 200,
             "enum": [
+              100,
               200,
+              300,
               400,
+              500,
               600,
+              700,
               800,
-              1000,
-              1200,
-              1400,
-              1600  
+              900,
+              1000
             ],
             "enumDescriptions": [
-              "Moves width '200px'",
-              "Moves width '400px'",
-              "Moves width '600px'",
-              "Moves width '800px'",
-              "Moves width '1000px'",
-              "Moves width '1200px'",
-              "Moves width '1400px'",
-              "Moves width '1600px'"  
+              "Move list width '100px'",
+              "Move list width '200px'",
+              "Move list width '300px'",
+              "Move list width '400px'",
+              "Move list width '500px'",
+              "Move list width '600px'",
+              "Move list width '700px'",
+              "Move list width '800px'",
+              "Move list width '900px'",
+              "Move list width '1000px'"
             ],
-            "description": "Choose the width of the moves display"
+            "description": "Choose the width of the move list display"
           },
           "vscode-pgn-viewer.notationLayout": {
             "type": "string",
