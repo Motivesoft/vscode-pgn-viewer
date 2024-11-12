@@ -135,6 +135,35 @@
             ],
             "description": "Choose the width of the move list display"
           },
+          "vscode-pgn-viewer.movesHeight": {
+            "type": "number",
+            "default": 200,
+            "enum": [
+              100,
+              200,
+              300,
+              400,
+              500,
+              600,
+              700,
+              800,
+              900,
+              1000
+            ],
+            "enumDescriptions": [
+              "Move list height '100px'",
+              "Move list height '200px'",
+              "Move list height '300px'",
+              "Move list height '400px'",
+              "Move list height '500px'",
+              "Move list height '600px'",
+              "Move list height '700px'",
+              "Move list height '800px'",
+              "Move list height '900px'",
+              "Move list height '1000px'"
+            ],
+            "description": "Choose the height of the move list display"
+          },
           "vscode-pgn-viewer.notationLayout": {
             "type": "string",
             "default": "list",

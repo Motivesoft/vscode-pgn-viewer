@@ -39,19 +39,18 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
 
     // Watch for any configuration changes and react immediately
     const changeConfigurationSubscription = vscode.workspace.onDidChangeConfiguration(e => {
-      if (
-        e.affectsConfiguration('vscode-pgn-viewer.pieceStyle') ||
-        e.affectsConfiguration('vscode-pgn-viewer.theme') ||
-        e.affectsConfiguration('vscode-pgn-viewer.layout') ||
-        e.affectsConfiguration('vscode-pgn-viewer.notationLayout') ||
-        e.affectsConfiguration('vscode-pgn-viewer.moveNotation') ||
-        e.affectsConfiguration('vscode-pgn-viewer.showCoordinates') ||
-        e.affectsConfiguration('vscode-pgn-viewer.showFen') ||
-        e.affectsConfiguration('vscode-pgn-viewer.showHeaders') ||
-        e.affectsConfiguration('vscode-pgn-viewer.showResult') ||
-        e.affectsConfiguration('vscode-pgn-viewer.boardSize') ||
-        e.affectsConfiguration('vscode-pgn-viewer.movesWidth')
-      ) {
+      if ( e.affectsConfiguration('vscode-pgn-viewer.pieceStyle') ||
+           e.affectsConfiguration('vscode-pgn-viewer.theme') ||
+           e.affectsConfiguration('vscode-pgn-viewer.layout') ||
+           e.affectsConfiguration('vscode-pgn-viewer.notationLayout') ||
+           e.affectsConfiguration('vscode-pgn-viewer.moveNotation') ||
+           e.affectsConfiguration('vscode-pgn-viewer.showCoordinates') ||
+           e.affectsConfiguration('vscode-pgn-viewer.showFen') ||
+           e.affectsConfiguration('vscode-pgn-viewer.showHeaders') ||
+           e.affectsConfiguration('vscode-pgn-viewer.showResult') ||
+           e.affectsConfiguration('vscode-pgn-viewer.boardSize') ||
+           e.affectsConfiguration('vscode-pgn-viewer.movesWidth') ||
+           e.affectsConfiguration('vscode-pgn-viewer.movesHeight') ) {
         webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
         updateWebview();
       }
@@ -100,6 +99,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     const showResult = configuration.get("showResult");
     const boardSize = configuration.get("boardSize") as number;
     const movesWidth = configuration.get("movesWidth") as number;
+    const movesHeight = configuration.get("movesHeight") as number;
 
     // if orientation is left/right, overall width is the sum of board and move size
     // otherwise its the max of them
@@ -172,6 +172,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
                   headers: ${showHeaders},
                   boardSize: "${boardSize}px",
                   movesWidth: "${movesWidth}px",
+                  movesHeight: "${movesHeight}px",
                   width: "${width}px",
                   orientation: "white"
                 });

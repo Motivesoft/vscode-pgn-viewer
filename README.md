@@ -22,13 +22,14 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 
 | Name | Description | Default Value |
 |------|-------------|---------------|
-| Theme | `vscode-pgn-viewer.theme`<br/>Choose which theme to use for the board. | "default" |
-| Piece Style | `vscode-pgn-viewer.pieceStyle`<br/>Choose which set of pieces to use on the board. | "merida" |
+| Theme | `vscode-pgn-viewer.theme`<br/>Choose which theme to use for the board. | `default` |
+| Piece Style | `vscode-pgn-viewer.pieceStyle`<br/>Choose which set of pieces to use on the board. | `merida` |
 | Board Size | `vscode-pgn-viewer.boardSize`<br/>Choose the size of the board. | 400 |
-| Moves Width | `vscode-pgn-viewer.movesWidth`<br/>Choose the width of the moves display. | 400 |
-| Layout | `vscode-pgn-viewer.layout`<br/>Choose the position of the board relative to the moves list. | "left" |
-| Notation Layout | `vscode-pgn-viewer.notationLayout`<br/>Choose notation layout. | "list" |
-| Move Notation | `vscode-pgn-viewer.moveNotation`<br/>Choose the move notation. | "short" |
+| Moves List Width | `vscode-pgn-viewer.movesWidth`<br/>Choose the width of the moves list. | 200 |
+| Moves List Height | `vscode-pgn-viewer.movesHeight`<br/>Choose the height of the moves list. | 200 |
+| Layout | `vscode-pgn-viewer.layout`<br/>Choose the position of the board relative to the moves list. | `left` |
+| Notation Layout | `vscode-pgn-viewer.notationLayout`<br/>Choose notation layout. | `list` |
+| Move Notation | `vscode-pgn-viewer.moveNotation`<br/>Choose the move notation. | `short` |
 | Show Result | `vscode-pgn-viewer.showResult`<br/>Show the game result, if available. | true |
 | Show Coordinates | `vscode-pgn-viewer.showCoordinates`<br/>Whether the board coordinates should be shown. | false |
 | Show FEN | `vscode-pgn-viewer.showFen`<br/>Whether to show the FEN for the current position. | false |
