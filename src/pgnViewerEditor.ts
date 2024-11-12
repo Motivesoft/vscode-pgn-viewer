@@ -95,6 +95,12 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
         <script src="${scriptUri}"></script>
         <title>Chess Board</title>
         <style>
+          .pgnvjs .cg-wrap.orientation-white coords.ranks coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-white coords.files coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-black coords.ranks coord:nth-child(2n + 1), .pgnvjs .cg-wrap.orientation-black coords.files coord:nth-child(2n + 1) {
+            color: red;
+          }
+          .pgnvjs .cg-wrap.orientation-black coords.ranks coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-black coords.files coord:nth-child(2n), .pgnvjs .cg-wrap.orientation-white coords.ranks coord:nth-child(2n + 1), .pgnvjs .cg-wrap.orientation-white coords.files coord:nth-child(2n + 1) {
+            color: blue;
+          }
           .pgnvjs
           {
             background-color: var(--vscode-editor-background);
@@ -137,7 +143,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
                   notationLayout: "list",
                   resizable: false,
                   showCoords: ${showCoordinates},
-                  coordsInner: true,
+                  coordsInner: false,
                   showFen: ${showFen},
                   showResult: true,
                   width: "1000px",
