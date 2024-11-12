@@ -39,7 +39,9 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
 
     const changeConfigurationSubscription = vscode.workspace.onDidChangeConfiguration(e => {
       if (e.affectsConfiguration('vscode-pgn-viewer.pieceStyle') ||
-          e.affectsConfiguration('vscode-pgn-viewer.theme')) {
+          e.affectsConfiguration('vscode-pgn-viewer.theme') ||
+          e.affectsConfiguration('vscode-pgn-viewer.showCoordinates') ||
+          e.affectsConfiguration('vscode-pgn-viewer.showFen')) {
         webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
         updateWebview();
       }
@@ -79,6 +81,8 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     const configuration = vscode.workspace.getConfiguration("vscode-pgn-viewer");
     const pieceStyle = configuration.get("pieceStyle");
     const theme = configuration.get("theme");
+    const showCoordinates = configuration.get("showCoordinates");
+    const showFen = configuration.get("showFen");
 
     // Return the HTML for the page, including the script calls to display the board and the style stuff
     // to coloriize the page based on whatever the current theme is
@@ -94,6 +98,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
           .pgnvjs
           {
             background-color: var(--vscode-editor-background);
+            color: var(--vscode-editor-foreground);
           }
           .pgnvjs .moves {
             background-color: var(--vscode-editor-background);
@@ -101,6 +106,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
           }
           .pgnvjs .buttons {
             background-color: var(--vscode-editor-background);
+            color: var(--vscode-editor-foreground);
           }
           .pgnvjs .fen {
             background-color: var(--vscode-editor-background);
@@ -130,7 +136,9 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
                   notation: "long",
                   notationLayout: "list",
                   resizable: false,
-                  showFen: true,
+                  showCoords: ${showCoordinates},
+                  coordsInner: true,
+                  showFen: ${showFen},
                   showResult: true,
                   width: "1000px",
                   boardSize: "400px",

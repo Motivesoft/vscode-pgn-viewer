@@ -45,6 +45,16 @@
       {
         "title": "Chess PGN Viewer",
         "properties": {
+          "vscode-pgn-viewer.showCoordinates": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether the board coordinates should be shown."
+          },
+          "vscode-pgn-viewer.showFen": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether to show the FEN for the current position."
+          },
           "vscode-pgn-viewer.pieceStyle": {
             "type": "string",
             "default": "merida",
