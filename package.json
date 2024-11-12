@@ -130,7 +130,7 @@
           },      
           "vscode-pgn-viewer.moveNotation": {
             "type": "string",
-            "default": "list",
+            "default": "short",
             "enum": [
               "short",
               "long"
@@ -151,8 +151,10 @@
               "bottom"
             ],
             "enumDescriptions": [
-              "Use short move notation, e.g. 'e4'",
-              "Use long move notation, e.g. 'e2-e4'"  
+              "Place the board to the left of the moves list",
+              "Place the board to the right of the moves list",
+              "Place the board above the moves list",
+              "Place the board below the moves list"
             ],
             "description": "Choose the position of the board relative to the moves list"
           },      
