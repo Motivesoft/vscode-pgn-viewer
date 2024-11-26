@@ -48,6 +48,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
            e.affectsConfiguration('vscode-pgn-viewer.showFen') ||
            e.affectsConfiguration('vscode-pgn-viewer.showHeaders') ||
            e.affectsConfiguration('vscode-pgn-viewer.showResult') ||
+           e.affectsConfiguration('vscode-pgn-viewer.showGameSelector') ||
            e.affectsConfiguration('vscode-pgn-viewer.boardSize') ||
            e.affectsConfiguration('vscode-pgn-viewer.movesWidth') ||
            e.affectsConfiguration('vscode-pgn-viewer.movesHeight') ) {
@@ -97,6 +98,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     const showFen = configuration.get("showFen");
     const showHeaders = configuration.get("showHeaders");
     const showResult = configuration.get("showResult");
+    const showGameSelector = configuration.get("showGameSelector");
     const boardSize = configuration.get("boardSize") as number;
     const movesWidth = configuration.get("movesWidth") as number;
     const movesHeight = configuration.get("movesHeight") as number;
@@ -159,6 +161,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
               case 'update':
                 PGNV.pgnView('board', { 
                   pgn: message.content,
+                  manyGames: ${showGameSelector},
                   pieceStyle: "${pieceStyle}",
                   theme: "${theme}",
                   layout: "${layout}",

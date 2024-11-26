@@ -2,7 +2,7 @@
   "name": "vscode-pgn-viewer",
   "displayName": "Chess PGN Viewer",
   "description": "Displays Portable Game Notation files on an interactive chess board",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -64,6 +64,11 @@
             "type": "boolean",
             "default": true,
             "description": "Whether to show headers (e.g. player names)."
+          },
+          "vscode-pgn-viewer.showGameSelector": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to show a dropdown selector to choose between multiple games in a single PGN file."
           },
           "vscode-pgn-viewer.boardSize": {
             "type": "number",

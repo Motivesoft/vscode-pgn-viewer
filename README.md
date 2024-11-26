@@ -36,6 +36,7 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 | Show Coordinates | `vscode-pgn-viewer.showCoordinates`<br/>Whether the board coordinates should be shown. | false |
 | Show FEN | `vscode-pgn-viewer.showFen`<br/>Whether to show the FEN for the current position. | false |
 | Show Headers | `vscode-pgn-viewer.showHeaders`<br/>Whether to show headers (e.g. player names). | true |
+| Show Game Selector | `vscode-pgn-viewer.showGameSelector`<br/>Whether to show a dropdown game selector. | true |
 
 ## Known Issues
 
@@ -44,6 +45,11 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 - The game position reverts to its initial state if the editor tab is hidden and then made visible again
 
 ## Release Notes
+
+### 1.2.0
+
+- Display a dropdown selector to choose which game to show if the PGN contains multiple. This is configurable
+- Updated to latest versions of a couple of dependencies
 
 ### 1.1.0
 

@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.2.0]
+
+- Display a dropdown selector to choose which game to show if the PGN contains multiple. This is configurable
+- Updated to latest versions of a couple of dependencies
+
 ## [1.1.0]
 
 - Allow configuration of the board and moves list etc. See [Extension Settings](README.md#extension-settings)
@@ -22,6 +27,7 @@
 - The PGN viewer uses background and foreground colors from the current editor theme
 - More layout and configuration options will be provided in a subsequent update
 
+[1.2.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.1.0
 [1.0.2]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.2
 [1.0.1]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.0.1
