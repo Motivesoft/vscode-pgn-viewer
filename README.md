@@ -46,6 +46,10 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 
 ## Release Notes
 
+### 1.2.1
+
+- Allow the system to cope with backslash characters in text strings 
+
 ### 1.2.0
 
 - Display a dropdown selector to choose which game to show if the PGN contains multiple. This is configurable

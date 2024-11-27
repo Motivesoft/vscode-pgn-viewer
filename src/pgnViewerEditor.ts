@@ -1,10 +1,11 @@
 import * as vscode from 'vscode';
+import * as fs from 'fs';
 
 export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider {
   public static register(context: vscode.ExtensionContext): vscode.Disposable {
     const provider = new PgnViewerEditorProvider(context);
     const providerRegistration = vscode.window.registerCustomEditorProvider(
-        PgnViewerEditorProvider.viewType,
+      PgnViewerEditorProvider.viewType,
       provider
     );
     return providerRegistration;
@@ -18,16 +19,21 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     document: vscode.TextDocument,
     webviewPanel: vscode.WebviewPanel,
     _token: vscode.CancellationToken
-  ): Promise<void> {
+  ) : Promise<void> {
     webviewPanel.webview.options = {
       enableScripts: true,
     };
     webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
 
     const updateWebview = () => {
+      // The pgn-viewer parser has a problem with backslashes in the text fields
+      // It is a bit extreme of us to just replace them, but the alternative is a failed load.
+      // This probably isn't a common problem, but happened to occur in a sample file
+      // of Bishop's Opening games used for testing.
+      const text = document.getText().replaceAll("\\", "/");
       webviewPanel.webview.postMessage({
         type: 'update',
-        content: document.getText(),
+        content: text
       });
     };
   
@@ -121,7 +127,7 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
       <!DOCTYPE html>
       <html lang="en">
       <head>
-        <meta charset="UTF-8">
+        <meta charset="ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="${scriptUri}"></script>
         <title>Chess Board</title>
