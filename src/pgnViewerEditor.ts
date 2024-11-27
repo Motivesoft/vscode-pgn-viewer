@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import * as fs from 'fs';
 
 export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider {
   public static register(context: vscode.ExtensionContext): vscode.Disposable {
@@ -26,11 +25,12 @@ export class PgnViewerEditorProvider implements vscode.CustomTextEditorProvider 
     webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
 
     const updateWebview = () => {
-      // The pgn-viewer parser has a problem with backslashes in the text fields
+      // The pgn-viewer parser seems to have a problem with backslashes in the text fields
       // It is a bit extreme of us to just replace them, but the alternative is a failed load.
       // This probably isn't a common problem, but happened to occur in a sample file
       // of Bishop's Opening games used for testing.
       const text = document.getText().replaceAll("\\", "/");
+      
       webviewPanel.webview.postMessage({
         type: 'update',
         content: text
