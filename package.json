@@ -31,7 +31,9 @@
   "bugs": {
     "url": "https://github.com/Motivesoft/vscode-pgn-viewer/issues"
   },
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension.js",
   "browser": "./dist/extension.js",
   "contributes": {
