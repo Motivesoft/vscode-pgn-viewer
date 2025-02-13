@@ -46,9 +46,9 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 
 ## Release Notes
 
-## 1.2.2
+### 1.2.2
 
-- Update dependency versions in response to CVE-2025-25200
+- Updated dependencies in response to [CVE-2025-25200](https://github.com/advisories/GHSA-593f-38f6-jp5m) 
 
 ### 1.2.1
 
