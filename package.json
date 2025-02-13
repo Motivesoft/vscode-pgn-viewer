@@ -2,7 +2,7 @@
   "name": "vscode-pgn-viewer",
   "displayName": "Chess PGN Viewer",
   "description": "Displays Portable Game Notation files on an interactive chess board",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -89,7 +89,7 @@
               1300,
               1400,
               1500,
-              1600  
+              1600
             ],
             "enumDescriptions": [
               "Board size '100px'",
@@ -107,7 +107,7 @@
               "Board size '1300px'",
               "Board size '1400px'",
               "Board size '1500px'",
-              "Board size '1600 px'" 
+              "Board size '1600 px'"
             ],
             "description": "Choose the size of the board"
           },
@@ -178,10 +178,10 @@
             ],
             "enumDescriptions": [
               "Show notation in a list",
-              "Show notation as an inline block"  
+              "Show notation as an inline block"
             ],
             "description": "Choose notation layout"
-          },      
+          },
           "vscode-pgn-viewer.moveNotation": {
             "type": "string",
             "default": "short",
@@ -191,10 +191,10 @@
             ],
             "enumDescriptions": [
               "Use short move notation, e.g. 'e4'",
-              "Use long move notation, e.g. 'e2-e4'"  
+              "Use long move notation, e.g. 'e2-e4'"
             ],
             "description": "Choose the move notation"
-          },      
+          },
           "vscode-pgn-viewer.layout": {
             "type": "string",
             "default": "left",
@@ -211,7 +211,7 @@
               "Place the board below the moves list"
             ],
             "description": "Choose the position of the board relative to the moves list"
-          },      
+          },
           "vscode-pgn-viewer.pieceStyle": {
             "type": "string",
             "default": "merida",
@@ -223,7 +223,7 @@
               "uscf",
               "condal",
               "maya",
-              "leipzig"  
+              "leipzig"
             ],
             "enumDescriptions": [
               "Piece style 'merida'",
@@ -233,7 +233,7 @@
               "Piece style 'uscf'",
               "Piece style 'condal'",
               "Piece style 'maya'",
-              "Piece style 'leipzig'"  
+              "Piece style 'leipzig'"
             ],
             "description": "Choose which set of pieces to use on the board"
           },
