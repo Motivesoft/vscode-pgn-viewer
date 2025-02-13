@@ -46,6 +46,10 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 
 ## Release Notes
 
+## 1.2.2
+
+- Update dependency versions in response to CVE-2025-25200
+
 ### 1.2.1
 
 - Allow the system to cope with backslash characters in text strings 

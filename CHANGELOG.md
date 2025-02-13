@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.2.2]
+
+- Update dependency versions in response to CVE-2025-25200
+
 ## [1.2.1]
 
 - Allow the system to cope with backslash characters in text strings 
@@ -31,6 +35,7 @@
 - The PGN viewer uses background and foreground colors from the current editor theme
 - More layout and configuration options will be provided in a subsequent update
 
+[1.2.2]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.0
 [1.1.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.1.0
