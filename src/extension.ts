@@ -2,8 +2,6 @@ import * as vscode from 'vscode';
 import { PgnViewerEditorProvider } from './pgnViewerEditor';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Extension "vscode-pgn-viewer" is now active');
-
 	// Register a command that will open the file in the currently active text editor in our PGN viewer
 	context.subscriptions.push(vscode.commands.registerCommand('vscode-pgn-viewer.openInPgnViewer', (uri: vscode.Uri) => {
 		// Get the open file
