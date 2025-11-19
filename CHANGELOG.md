@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.2.3]
+
+- Updated dependencies in response to Dependabot alert
+
 ## [1.2.2]
 
 - Updated dependencies in response to [CVE-2025-25200](https://github.com/advisories/GHSA-593f-38f6-jp5m) 
@@ -35,6 +39,7 @@
 - The PGN viewer uses background and foreground colors from the current editor theme
 - More layout and configuration options will be provided in a subsequent update
 
+[1.2.3]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.3
 [1.2.2]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.2
 [1.2.1]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.1
 [1.2.0]: https://github.com/Motivesoft/vscode-pgn-viewer/releases/tag/v1.2.0
