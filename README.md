@@ -46,6 +46,10 @@ Uses [@mliebelt/pgn-viewer](https://www.npmjs.com/package/@mliebelt/pgn-viewer).
 
 ## Release Notes
 
+### 1.2.4
+
+- Updated dependencies in response to a Dependabot alert
+
 ### 1.2.3
 
 - Updated dependencies in response to a Dependabot alert
